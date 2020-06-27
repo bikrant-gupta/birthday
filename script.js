@@ -31,7 +31,7 @@ $(document).ready(()=>{
 	setTimeout(()=>{
 		$('.inner-block').slideDown({duration:500,queue:false})
 		$('.next-btn').slideDown({duration:500,queue:false})
-	},0)
+	},3000)
 	function change(){
 		setTimeout(()=>{
 			var ran = Math.floor(Math.random()*l);
