@@ -4,14 +4,14 @@ $(document).ready(()=>{
 	"Milki","Sexa","Jannu","Biro"]
 
 	var text = [
-	"<div class='fx'><div class='pic'><div>I love you</div><div style='margin-top:100px'>and Keep smiling</div></div></div>",
+	
 	"<div>Firstly..</div><div>I miss you too much</div>",
 	"<div>I wish you will get a</div><div>Good Job</div><div>As soon as possible</div>",
 	"<div>I know </div><div>hum thora jyada react karte hai</div><div> maaf kar diya kijiye</div>",
 	"<div>Hmmmm... </div><div>Thora jyada sad v h </div><div>kyuki aap pubg khelte hai </div><div>delete that asap</div>",
 	"Want to meet you today",
 	"Hug you tightly",
-	
+	"<div class='fx'><div class='pic'><div>I love you</div><div style='margin-top:100px'>and Keep smiling</div></div></div>",
 	"<div>Be </div><div>with me</div>",
 	"<div>I get very sad</div> <div>when you don't msg me</div>",
 	"<div>Just want more time </div><div>from you </div><div>everyday</div>",
