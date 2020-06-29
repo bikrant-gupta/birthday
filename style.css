@@ -2,13 +2,105 @@
 	margin:0px;
 	padding:0px;
 	font-family: 'Handlee', cursive;
+	box-sizing: border-box;
 }
+.wall{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+}
+.blackish{
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	background-image: linear-gradient(#00000010,#00000095);
+}
+.brick{
+	border:1px solid black;
+	background-color:#ff1145;
+	height: 5%;
+	width:10%;
+	float:left;
+}
+.s-brick{
+	border:1px solid black;
+	background-color:#ff1145;
+	height: 5%;
+	width:5%;
+	float:left;
+}
+.gate{
+	background-color: #995500;
+	height: 60%;
+	top:20%;
+	position: fixed;
+	left:30%;
+	width: 40%;
+	transition: 1s ease-out;
+	z-index: 100;
+}
+.inside-wall{
+	background-color: #003300;
+	height: 60%;
+	top:20%;
+	position: fixed;
+	transition: 1s ease-out;
+	left:30%;
+	width: 40%;
+}
+.full-width{
+	z-index:1000;
+	left:0%;
+	top:0%;
+	height: 100%;
+	width: 100%;
+}
+.gate1{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background-image:  linear-gradient(#00000010,#00000080);
+	height: 100%;
+	width: 100%;
+	
+}
+.gate-block{
+	border: 1px solid black;
+	height: 40%;
+	width:80%;
+	margin-left: 10%;
+	border-radius: 10px;
+	background-image: linear-gradient(#ffffff30,#ffffff50);
+}
+.handle{
+	position: absolute;
+	right:5%;
+	top:47.5%;
+	height: 5%;
+	width: 7.5%;
+	border: 1px solid black;
+	border-radius: 50%;
+	background-color: black;
+}
+.door-btn{
+	position: absolute;
+	right:-15%;
+	top:47.5%;
+	height: 5%;
+	width: 7.5%;
+	border: 5px solid black;
+	border-radius: 10%;
+	background-color: #aaa;
+}
+
 
 .outer-block{
 	position: fixed;
 	background-color: #ddd;
 	height: 100%;
 	width: 100%;
+	z-index: 2000;
 }
 .inner-block{
 	position: fixed;
@@ -26,6 +118,7 @@
 	font-style: italic;
 	display: none;
 	color:red;
+	z-index: 2000;
 }
 .to{
 	font-size: 30px;
@@ -51,21 +144,13 @@
 	border-radius: 50%;
 	position: fixed;
 	left:45%;
+	z-index: 2000;
 }
 .previous-btn{
 	top:10%;
-	display: none;
 }
 .next-btn{
 	bottom: 10%;
-	display: none;
-}
-.next-content{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	font-size: 36px;
-	padding-left: 8px;
 }
 .want{
 	position: fixed;
@@ -75,25 +160,44 @@
 	text-align: center;
 	padding: 7px;
 	margin-left: 35%;
+	z-index: 2000;
 }
 .fx{
 	height: 100%;
 }
-.pic{
-	background-image: url('image.jpg');
-	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
-	position: flex;
-	flex-direction: column;
-	justify-content: space-around;
+.ic{
 	height: 100%;
+	width:100%;
+	font-size: 45px;
+	color:#8a1e1e;
+	background-color: #ffff55;
+	border-radius: 50%;
 }
-
+.far,.fa{
+	color:#8a1e1e;
+	background-color: #ffff55;
+	border-radius: 50%;
+	margin-left: 5px;
+}
+.d-n{
+	display: none;
+}
 @media (min-width: 700px) and (max-width: 1900px){
 	.inner-block{
 		width:80%;
 		left:10%;
 		/*background-color: #000;*/
+	}
+	.gate,.inside-wall{
+		left:40%;
+		width: 20%;
+	}
+
+	.full-width{
+		z-index:1000;
+		left:0%;
+		top:0%;
+		height: 100%;
+		width: 100%;
 	}
 }
