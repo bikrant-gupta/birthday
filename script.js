@@ -1,37 +1,40 @@
 $(document).ready(()=>{
-	var prefix= "Happy BirthDay to You My";
-	var suffix = ["Babu","Shona","Muccchi wali","Sweetu","Rosogolla","Babe","Teddy","Shazadi","Cutu","Jaan","Love",
-	"Milki","Sexa","Jannu","Biro"]
+	var prefix= "Happy BirthDay to You My ";
+	var suffix = ["Hrishidev","Guru Ji","Biro","Bhai","Devta","Bhaiya Ji","Chote Bhaiya","Bare bhaiya","jaaneman","Developer","Topper","9 GPA wala"]
 
-	var text = [
-	
-	"<div>Firstly..</div><div>I miss you too much</div>",
-	"<div>I wish you will get a</div><div>Good Job</div><div>As soon as possible</div>",
-	"<div>I know </div><div>hum thora jyada react karte hai</div><div> maaf kar diya kijiye</div>",
-	"<div>Hmmmm... </div><div>Thora jyada sad v h </div><div>kyuki aap pubg khelte hai </div><div>delete that asap</div>",
-	"Want to meet you today",
-	"Hug you tightly",
-	"<div class='fx'><div class='pic'><div>I love you</div><div style='margin-top:100px'>and Keep smiling</div></div></div>",
-	"<div>Be </div><div>with me</div>",
-	"<div>I get very sad</div> <div>when you don't msg me</div>",
-	"<div>Just want more time </div><div>from you </div><div>everyday</div>",
-	"<div>Happy BirthDay </div><div>Love</div>",
-	"<div>May god </div><div>blast You </div><div>with lots of laugh</div>",
-	"<div>Be</div> <div>Happy and safe</div>",
-	"Thank You Babe"
+	var text = ["Bhaiya ji Party kidhar hai????",
+	"Mithayi, naan and curry Parcel kar do bhai",
+	"Sab Maze me na?",
+	"Girlfriend banao bhai..<br> kab tak single baithoge?",
+	"Aur batao?<br> Next press kro aur aage padho",
+	"Happy Birthday<br>bhai",
+	"Wish you will get a<br> Best job",
+	"8LPA minimum wala k liye wish kr dete hai jaa tu v kya yaad rakhega",
+	"Thora humpe v kripa banaye rakhe<br> guru dev",
+	"next page ki screenshot leke bhejo sir kon sa naam aya dekhu",
+	`<div>HAPPY BIRTHDAY</div>
+	<div class="to">TO</div>
+	<div class="you">You</div>
+	<div class="suffix">Hrishidev</div>`
 	]
 
+	var fa = [
+	'<i class="far fa-sad-tear"></i>',
+	'<i class="far fa-grin-stars"></i>',
+	'<i class="far fa-grin-beam-sweat"></i>',
+	'<i class="far fa-grin-tongue-squint"></i>',
+	'<i class="far fa-grin-squint-tears"></i>',
+	'<i class="far fa-grin-hearts"></i>',
+	'<i class="far fa-grin-alt"></i>',
+	'<i class="far fa-grin-wink"></i>',
+	'<i class="far fa-laugh"></i>',
+	'<i class="far fa-grin-squint"></i>',
+	'<i class="far fa-birthday-cake"></i>'
+	]
 	var tl = text.length;
 
 	var l = suffix.length;
-	var string ="";
-	for(var i=0;i<1000;i++){
-		string += prefix + suffix[i%l]+ " ";
-	}
-	setTimeout(()=>{
-		$('.inner-block').slideDown({duration:500,queue:false})
-		$('.next-btn').slideDown({duration:500,queue:false})
-	},3000)
+	
 	function change(){
 		setTimeout(()=>{
 			var ran = Math.floor(Math.random()*l);
@@ -42,8 +45,14 @@ $(document).ready(()=>{
 	change();
 	var curr = -1;
 	$('.next-btn').click(()=>{
+		$('.want').fadeOut({duration:200,queue:false})
 		curr++;
-		$('.content').html(text[curr]);
+		s = "";
+		n = 5;
+		while(n--){
+			s+=fa[curr];
+		}
+		$('.content').html(text[curr]+"<div>"+s+"</div>");
 		if(curr>0){
 			$('.previous-btn').fadeIn({duration:100,queue:false})
 		}
@@ -53,7 +62,12 @@ $(document).ready(()=>{
 	})
 	$('.previous-btn').click(()=>{
 		curr--;
-		$('.content').html(text[curr]);
+		s = "";
+		n = 5;
+		while(n--){
+			s+=fa[curr];
+		}
+		$('.content').html(text[curr]+"<div>"+s+"</div>");
 		if(curr<tl-1){
 			$('.next-btn').fadeIn({duration:100,queue:false})
 		}
@@ -62,5 +76,44 @@ $(document).ready(()=>{
 		}
 	})
 
-	$('.outer-block').html(string)
+
+	function wall() {
+		s="";
+		for(var i=0;i<16;i++){
+			if(i%2==0){
+				s+=`<div class="s-brick"></div>`;
+				for(var j=0;j<9;j++){
+					s+=	`<div class='brick'></div>`
+				}
+				s+=`<div class="s-brick"></div>`;
+			}
+			else{
+				for(var j=0;j<10;j++){
+					s+=	`<div class='brick'></div>`
+				}
+			}
+		}
+		$('.wall').html(s)
+	}
+	wall();
+	
+
+	$('.door-btn').click(()=>{
+		$('.want').html('I want to say you something ')
+		$('.gate').css('left','70%');
+		setTimeout(()=>{
+			$('.inside-wall').addClass('full-width');
+			setTimeout(()=>{
+				$('.inner-block').slideDown({duration:500,queue:false})
+				setTimeout(()=>{
+					$('.want').slideDown({duration:500,queue:false})
+					setTimeout(()=>{
+						$('.next-btn').slideDown({duration:500,queue:false})
+					},0)
+				},0)
+			},0)
+		},0)
+	})
+
+	
 })
