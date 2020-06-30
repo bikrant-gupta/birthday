@@ -109,10 +109,10 @@ $(document).ready(()=>{
 					$('.want').slideDown({duration:500,queue:false})
 					setTimeout(()=>{
 						$('.next-btn').slideDown({duration:500,queue:false})
-					},0)
-				},0)
-			},0)
-		},0)
+					},1000)
+				},3000)
+			},1000)
+		},1000)
 	})
 
 	
